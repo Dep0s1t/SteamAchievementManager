@@ -49,7 +49,7 @@ namespace SAM.API.Wrappers
                 key,
                 sb,
                 sb.Capacity);
-            return result == 0 ? null : sb.ToString();
+            return result == 0 ? null : Encoding.UTF8.GetString(Encoding.Default.GetBytes(sb.ToString()));
         }
         #endregion
     }
